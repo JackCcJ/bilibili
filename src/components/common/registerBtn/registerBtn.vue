@@ -30,7 +30,7 @@
     .loginBtn{
         display: flex;
         color: #fff;
-        height: 12.222vw;
+        height: 11.222vw;
         border-radius: 6.111vw;
         background-color: #ffa8b6;
         justify-content: center;
