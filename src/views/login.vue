@@ -1,11 +1,10 @@
 <template>
  <div class="login">
     <nav-bar>
-        <div slot="center">注册bilibil</div>
-        <div slot="right" @click="$router.push('./login')">登陆bilibil</div>
+        <div slot="center">登陆bilibil</div>
+        <div slot="right" @click="$router.push('./register')">注册bilibil</div>
     </nav-bar>
-    <register-name label="姓名" class="account" placeholder="请输入姓名" rule="^.{6,16}$" @inputChange="res => model.name = res"></register-name>
-    <register-name label="账号" placeholder="请输入账号" rule="^.{6,16}$" @inputChange="res => model.username = res"></register-name>
+    <register-name class="account" label="账号" placeholder="请输入账号" rule="^.{6,16}$" @inputChange="res => model.username = res"></register-name>
     <register-name 
     label="密码" 
     type="password" 
@@ -28,7 +27,6 @@ import registerName from '@/components/common/registerName/registerName'
    return {
       model:
       { 
-        name:'',
         username:'',
         password:''
        }
@@ -45,8 +43,8 @@ import registerName from '@/components/common/registerName/registerName'
       },
      async loginSubmit(){
          let rulg = /^.{6,16}$/
-            if(rulg.test(this.model.name)  &&  rulg.test(this.model.username) && rulg.test(this.model.password) ){
-            const res = await this.$request.post('/register',this.model)
+            if(rulg.test(this.model.username) && rulg.test(this.model.password) ){
+            const res = await this.$request.post('/login',this.model)
             console.log(res);
                 this.$toast.fail(res.data.msg)
           }else{

@@ -27,9 +27,28 @@
     align-items: center;
     justify-content: center;
     div{
+        align-items: center;
         text-align: center;
         flex: 1;
-        font-size: 4.444vw;
+    }
+    div img{
+        width: 80%;
+    }
+    .right img {
+        width: 30px;
+        height:30px;
+    }
+    .van-search{
+        margin-top: 1.567vw;
+        padding: 0;
+    }
+    .center{
+        height: 44px;
+        padding: 0;
+        flex: 2;
+    }
+    .right{
+        font-size: 3.5vw;
     }
 }
 </style>
